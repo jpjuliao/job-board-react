@@ -1,5 +1,12 @@
 import { Job } from '../models/job'
 
+/**
+ * Component to display job details in a card format.
+ *
+ * @param {Object} props - The properties object.
+ * @param {Job} props.job - The job data to display, including title, company, location, type, and description.
+ * @returns A React element representing a job card with job details.
+ */
 export default function JobCard({ job }: { job: Job }) {
   return (
     <div className="bg-white p-4 rounded shadow">
