@@ -1,6 +1,6 @@
 import './App.css'
 import JobBoard from './components/JobBoard'
-import { JobsProvider } from './components/JobsContext'
+import { JobsProvider } from './context/JobsContext'
 import { Helmet } from 'react-helmet'
 
 function App() {

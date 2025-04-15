@@ -2,7 +2,7 @@ import { Job } from '../models/job'
 import * as Dialog from '@radix-ui/react-dialog'
 import { useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
-import { JobsContext } from './JobsContext'
+import { JobsContext } from '../context/JobsContext'
 import { JobsContextType } from '../models/job'
 
 export default function JobCardDialog({ job }: { job: Job }) {

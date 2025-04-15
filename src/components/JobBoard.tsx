@@ -3,7 +3,7 @@ import JobCard from './JobCard'
 import JobForm from './JobForm'
 import { jobSchema } from '../schemas/jobSchema'
 import { z } from 'zod'
-import { JobsContext } from './JobsContext'
+import { JobsContext } from '../context/JobsContext'
 import { useContext, useState } from 'react'
 import { JobsContextType } from '../models/job'
 

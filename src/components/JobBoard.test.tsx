@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 import JobBoard from './JobBoard';
-import { JobsProvider } from './JobsContext';
+import { JobsProvider } from '../context/JobsContext';
 import '@testing-library/jest-dom';
 
 describe('JobBoard component', () => {
