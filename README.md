@@ -1,6 +1,6 @@
 # Job Board Application
 
-A React-based job board application built with TypeScript, Vite, and Tailwind CSS.
+A React-based job board application built with TypeScript, Vite, Tailwind CSS, Radix UI, React Helmet and React Hook Form.
 
 ## Setup Instructions
 
