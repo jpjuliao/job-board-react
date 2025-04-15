@@ -10,7 +10,14 @@ function App() {
       <Helmet>
         <title>Job Board</title>
       </Helmet>
-      <JobBoard />
+      <header className="App-header">
+      </header>
+      <main>
+        <JobBoard />
+      </main>
+      <footer>
+        <p>© 2025 Job Board. All rights reserved. Created by <a href="https://github.com/jpjuliao">jpjuliao</a>.</p>
+      </footer>
     </JobsProvider>
   )
 }
