@@ -4,7 +4,7 @@ import JobForm from './JobForm'
 import { jobSchema } from '../schemas/jobSchema'
 import { z } from 'zod'
 import { JobsContext } from './JobsContext'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { JobsContextType } from '../models/job'
 
 type JobFormInputs = z.infer<typeof jobSchema>;
@@ -16,6 +16,8 @@ type JobFormInputs = z.infer<typeof jobSchema>;
  */
 export default function JobBoard() {
   const { jobs, setJobs } = useContext(JobsContext) as JobsContextType
+
+  const [selectedJobType, setSelectedJobType] = useState<string | null>(null);
 
   /**
    * Logs the submitted job to the console.
@@ -37,11 +39,20 @@ export default function JobBoard() {
     setJobs([...jobs, newJob]);
   };
 
+  const filteredJobs = selectedJobType ? jobs.filter((job) => job.type === selectedJobType) : jobs;
+
   return (
     <>
       <div className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold mb-4">Available Jobs</h2>
-        {jobs.map((job: Job) => (
+        <select value={selectedJobType || ""} onChange={(e) => setSelectedJobType(e.target.value)}>
+          <option value="">All</option>
+          <option value="Full-time">Full-time</option>
+          <option value="Part-time">Part-time</option>
+          <option value="Contract">Contract</option>
+          <option value="Internship">Internship</option>
+        </select>
+        {filteredJobs.map((job) => (
           <JobCard key={job.id} job={job} />
         ))}
       </div>
