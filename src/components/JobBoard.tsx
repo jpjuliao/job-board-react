@@ -5,7 +5,6 @@ import JobForm from './JobForm'
 import { jobSchema } from '../schemas/jobSchema'
 import { z } from 'zod'
 
-
 type JobFormInputs = z.infer<typeof jobSchema>;
 
 /**
