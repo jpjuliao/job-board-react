@@ -18,7 +18,7 @@ export default function JobBoard() {
   /**
    * Logs the submitted job to the console.
    *
-   * @param {any} data The submitted job data.
+   * @param {JobFormInputs} data The submitted job data.
    */
   const handleJobSubmit = (data: JobFormInputs) => {
     console.log("Submitted job:", data);
@@ -27,11 +27,13 @@ export default function JobBoard() {
   return (
     <>
       <div className="flex flex-col gap-4">
+        <h2 className="text-2xl font-bold mb-4">Available Jobs</h2>
         {Jobs.map((job: Job) => (
           <JobCard key={job.id} job={job} />
         ))}
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 mt-5">
+        <h2 className="text-2xl font-bold mb-4">Post a Job</h2>
         <JobForm onSubmit={handleJobSubmit} />
       </div>
     </>

@@ -1,4 +1,4 @@
-import { Job } from '../models/Job'
+import { Job } from '../models/job'
 
 /**
  * Component to display job details in a card format.
@@ -10,7 +10,7 @@ import { Job } from '../models/Job'
 export default function JobCard({ job }: { job: Job }) {
   return (
     <div className="bg-white p-4 rounded shadow">
-      <h2 className="text-lg font-semibold">{job.title}</h2>
+      <h2 className="text-gray-800 text-lg font-semibold">{job.title}</h2>
       <p className="text-gray-600">{job.company}</p>
       <p className="text-gray-600">{job.location}</p>
       <p className="text-gray-600">{job.type}</p>
