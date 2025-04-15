@@ -1,3 +1,5 @@
+import { JobFormInputs } from "../schemas/jobSchema";
+
 export interface Job {
   id: string
   title: string
@@ -5,4 +7,9 @@ export interface Job {
   location: string
   type: string
   description: string
+}
+
+export interface JobFormProps {
+  defaultValues?: Partial<JobFormInputs>;
+  onSubmit: (data: JobFormInputs) => void;
 }
