@@ -1,54 +1,50 @@
-# React + TypeScript + Vite
+# Job Board Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based job board application built with TypeScript, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Setup Instructions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository: `git clone [https://github.com/your-username/job-board.git`](https://github.com/your-username/job-board.git`)
+2. Install dependencies: `npm install` or `yarn install`
+3. Start the development server: `npm run dev` or `yarn dev`
+4. Open the application in your browser: `http://localhost:3000`
 
-## Expanding the ESLint configuration
+## Code Logic
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The application is built using a modular approach, with separate components for each feature. The main components are:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+* `JobBoard`: Displays a list of available jobs
+* `JobCard`: Displays a single job listing
+* `JobsProvider`: Manages the job data and provides it to the `JobBoard` component
+* `JobForm`: Handles job submission and validation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application uses React Hooks for state management and Tailwind CSS for styling.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## How to Use
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Open the application in your browser: http://localhost:3000
+2. Browse the list of available jobs on the JobBoard component
+3. Click on the "Post a Job" button to open the JobForm component
+4. Fill out the job form fields and submit the form to create a new job listing
+5. Use the filters on the JobBoard component to narrow down the job listings by type (e.g., full-time, part-time, etc.)
+
+## Technologies and Tools Used
+
+The following technologies and tools were used to build this application:
+
+- Frontend:
+  - React: A JavaScript library for building user interfaces
+  - TypeScript: A superset of JavaScript that adds optional static typing
+  - Vite: A fast and lightweight development server
+  - Tailwind CSS: A utility-first CSS framework
+- Testing:
+  - Jest: A JavaScript testing framework
+  - React Testing Library: A testing library for React components
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to the project, please fork the repository and submit a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
