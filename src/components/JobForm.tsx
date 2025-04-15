@@ -22,7 +22,7 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
   });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-md">
+    <form onSubmit={handleSubmit(onSubmit)} className="">
       <div>
         <label>Job Title</label>
         <input

@@ -13,3 +13,12 @@ export interface JobFormProps {
   defaultValues?: Partial<JobFormInputs>;
   onSubmit: (data: JobFormInputs) => void;
 }
+
+export interface JobsContextType {
+  jobs: Job[];
+  setJobs: (jobs: Job[]) => void;
+}
+
+export interface JobProviderProps {
+  children: React.ReactNode;
+}
