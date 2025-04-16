@@ -24,35 +24,38 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="">
       <div>
-        <label>Job Title</label>
+        <label htmlFor="job-title">Job Title</label>
         <input
           {...register("title")}
           className="border rounded px-3 py-2 w-full"
+          id="job-title"
         />
         {errors.title && <p className="text-red-500">{errors.title.message}</p>}
       </div>
 
       <div>
-        <label>Company</label>
+        <label htmlFor="company">Company</label>
         <input
           {...register("company")}
           className="border rounded px-3 py-2 w-full"
+          id="company"
         />
         {errors.company && <p className="text-red-500">{errors.company.message}</p>}
       </div>
 
       <div>
-        <label>Location</label>
+        <label htmlFor="location">Location</label>
         <input
           {...register("location")}
           className="border rounded px-3 py-2 w-full"
+          id="location"
         />
         {errors.location && <p className="text-red-500">{errors.location.message}</p>}
       </div>
 
       <div>
-        <label>Job Type</label>
-        <select {...register("type")} className="border rounded px-3 py-2 w-full">
+        <label htmlFor="job-type">Job Type</label>
+        <select {...register("type")} className="border rounded px-3 py-2 w-full" id="job-type">
           <option value="">Select type</option>
           <option value="Full-time">Full-time</option>
           <option value="Part-time">Part-time</option>
@@ -63,10 +66,11 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
       </div>
 
       <div>
-        <label>Description</label>
+        <label htmlFor="description">Description</label>
         <textarea
           {...register("description")}
           className="border rounded px-3 py-2 w-full min-h-[100px]"
+          id="description"
         />
         {errors.description && <p className="text-red-500">{errors.description.message}</p>}
       </div>

@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.84% </span>
+                <span class="strong">61.53% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/13</span>
+                <span class='fraction'>8/13</span>
             </div>
         
             
@@ -146,7 +146,11 @@
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,12 +168,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -255,35 +263,38 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
   return (
     &lt;form onSubmit={handleSubmit(onSubmit)} className=""&gt;
       &lt;div&gt;
-        &lt;label&gt;Job Title&lt;/label&gt;
+        &lt;label htmlFor="job-title"&gt;Job Title&lt;/label&gt;
         &lt;input
           {...register("title")}
           className="border rounded px-3 py-2 w-full"
+          id="job-title"
         /&gt;
         {errors.title &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="text-red-500"&gt;{errors.title.message}&lt;/p&gt;}</span>
       &lt;/div&gt;
 &nbsp;
       &lt;div&gt;
-        &lt;label&gt;Company&lt;/label&gt;
+        &lt;label htmlFor="company"&gt;Company&lt;/label&gt;
         &lt;input
           {...register("company")}
           className="border rounded px-3 py-2 w-full"
+          id="company"
         /&gt;
         {errors.company &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="text-red-500"&gt;{errors.company.message}&lt;/p&gt;}</span>
       &lt;/div&gt;
 &nbsp;
       &lt;div&gt;
-        &lt;label&gt;Location&lt;/label&gt;
+        &lt;label htmlFor="location"&gt;Location&lt;/label&gt;
         &lt;input
           {...register("location")}
           className="border rounded px-3 py-2 w-full"
+          id="location"
         /&gt;
         {errors.location &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="text-red-500"&gt;{errors.location.message}&lt;/p&gt;}</span>
       &lt;/div&gt;
 &nbsp;
       &lt;div&gt;
-        &lt;label&gt;Job Type&lt;/label&gt;
-        &lt;select {...register("type")} className="border rounded px-3 py-2 w-full"&gt;
+        &lt;label htmlFor="job-type"&gt;Job Type&lt;/label&gt;
+        &lt;select {...register("type")} className="border rounded px-3 py-2 w-full" id="job-type"&gt;
           &lt;option value=""&gt;Select type&lt;/option&gt;
           &lt;option value="Full-time"&gt;Full-time&lt;/option&gt;
           &lt;option value="Part-time"&gt;Part-time&lt;/option&gt;
@@ -294,10 +305,11 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
       &lt;/div&gt;
 &nbsp;
       &lt;div&gt;
-        &lt;label&gt;Description&lt;/label&gt;
+        &lt;label htmlFor="description"&gt;Description&lt;/label&gt;
         &lt;textarea
           {...register("description")}
           className="border rounded px-3 py-2 w-full min-h-[100px]"
+          id="description"
         /&gt;
         {errors.description &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="text-red-500"&gt;{errors.description.message}&lt;/p&gt;}</span>
       &lt;/div&gt;
@@ -307,7 +319,7 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
         disabled={isSubmitting}
         className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
       &gt;
-        {isSubmitting ? <span class="branch-0 cbranch-no" title="branch not covered" >"Saving..." </span>: "Save Job"}
+        {isSubmitting ? "Saving..." : "Save Job"}
       &lt;/button&gt;
     &lt;/form&gt;
   );
@@ -319,7 +331,7 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-15T21:46:31.081Z
+                at 2025-04-16T19:45:53.652Z
             </div>
         <script src="../prettify.js"></script>
         <script>

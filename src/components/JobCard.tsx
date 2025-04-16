@@ -14,7 +14,7 @@ export default function JobCard({ job }: { job: Job }) {
     <>
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <div className="bg-white p-4 rounded shadow">
+          <div className="job-card bg-white p-4 rounded shadow">
             <h2 className="text-gray-800 text-lg font-semibold">{job.title}</h2>
             <p className="text-gray-600">{job.company}</p>
             <p className="text-gray-600">{job.location}</p>

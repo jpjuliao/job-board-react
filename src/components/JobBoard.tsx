@@ -45,7 +45,7 @@ export default function JobBoard() {
     <>
       <div className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold mb-4">Available Jobs</h2>
-        <select value={selectedJobType || ""} onChange={(e) => setSelectedJobType(e.target.value)}>
+        <select value={selectedJobType || ""} onChange={(e) => setSelectedJobType(e.target.value)} className="job-filter">
           <option value="">All</option>
           <option value="Full-time">Full-time</option>
           <option value="Part-time">Part-time</option>
