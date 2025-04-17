@@ -1,49 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 
-interface ErrorBoundaryProps {
-  children: React.ReactNode;
-  onError: (error: Error) => void;
+interface ErrorBoundaryState {
+  hasError: boolean;
 }
 
-/**
- * ErrorBoundary component that catches JavaScript errors anywhere in the child component tree,
- * logs those errors, and displays a fallback UI instead of the component tree that crashed.
- *
- * @param {ErrorBoundaryProps} props The component props.
- * @param {React.ReactNode} props.children The children components that this error boundary wraps.
- * @param {(error: Error) => void} props.onError The callback function to handle the error.
- * @returns {React.ReactElement} The rendered component with error handling.
- */
-
-const ErrorBoundary: React.FC<ErrorBoundaryProps> = ({ children }) => {
-  const [hasError, setError] = useState(false);
-  const [error, setErrorObject] = useState<Error | null>(null);
-
-  useEffect(() => {
-    if (error) {
-      console.error('Error caught by error boundary:', error);
-    }
-  }, [error]);
-
-  const errorHandler = (error: Error) => {
-    setError(true);
-    setErrorObject(error);
-  };
-
-  if (hasError) {
-    return (
-      <div>
-        <h2>Something went wrong.</h2>
-        <p>{error?.message}</p>
-      </div>
-    );
+class ErrorBoundary extends Component<React.PropsWithChildren<object>, ErrorBoundaryState> {
+  constructor(props: React.PropsWithChildren<object>) {
+    super(props);
+    this.state = { hasError: false };
   }
 
-  return (
-    <ErrorBoundary onError={errorHandler}>
-      {children}
-    </ErrorBoundary>
-  );
-};
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    this.setState({ hasError: true });
+    console.error(error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <h1>Something went wrong.</h1>;
+    }
+    return this.props.children;
+  }
+}
 
 export default ErrorBoundary;
