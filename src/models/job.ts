@@ -12,6 +12,7 @@ export interface Job {
 export interface JobFormProps {
   defaultValues?: Partial<JobFormInputs>;
   onSubmit: (data: JobFormInputs) => void;
+  mode?: "create" | "edit";
 }
 
 export interface JobsContextType {

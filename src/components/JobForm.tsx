@@ -9,9 +9,10 @@ import { JobFormProps } from "../models/job";
  * @param {JobFormProps} props - The properties object.
  * @param {JobFormInputs} [props.defaultValues={}] - The default values for the form fields.
  * @param {(data: JobFormInputs) => void} props.onSubmit - The callback function to call when the form is submitted.
+ * @param {string} [props.mode="create"] - The mode of the form, either "create" or "edit".
  * @returns A React element representing the job form.
  */
-export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) {
+export default function JobForm({ defaultValues = {}, onSubmit, mode = "create" }: JobFormProps) {
   const {
     register,
     handleSubmit,
@@ -29,6 +30,7 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
           {...register("title")}
           className="border rounded px-3 py-2 w-full"
           id="job-title"
+          defaultValue={defaultValues.title}
         />
         {errors.title && <p className="text-red-500">{errors.title.message}</p>}
       </div>
@@ -39,6 +41,7 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
           {...register("company")}
           className="border rounded px-3 py-2 w-full"
           id="company"
+          defaultValue={defaultValues.company}
         />
         {errors.company && <p className="text-red-500">{errors.company.message}</p>}
       </div>
@@ -49,13 +52,14 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
           {...register("location")}
           className="border rounded px-3 py-2 w-full"
           id="location"
+          defaultValue={defaultValues.location}
         />
         {errors.location && <p className="text-red-500">{errors.location.message}</p>}
       </div>
 
       <div>
         <label htmlFor="job-type">Job Type</label>
-        <select {...register("type")} className="border rounded px-3 py-2 w-full" id="job-type">
+        <select {...register("type")} className="border rounded px-3 py-2 w-full" id="job-type" defaultValue={defaultValues.type}>
           <option value="">Select type</option>
           <option value="Full-time">Full-time</option>
           <option value="Part-time">Part-time</option>
@@ -71,8 +75,8 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
           {...register("description")}
           className="border rounded px-3 py-2 w-full min-h-[100px]"
           id="description"
+          defaultValue={defaultValues.description}
         />
-        {errors.description && <p className="text-red-500">{errors.description.message}</p>}
       </div>
 
       <button
@@ -80,7 +84,7 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
         disabled={isSubmitting}
         className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
       >
-        {isSubmitting ? "Saving..." : "Save Job"}
+        {mode === "create" ? "Create Job" : "Update Job"}
       </button>
     </form>
   );
