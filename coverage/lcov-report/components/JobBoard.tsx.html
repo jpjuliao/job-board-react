@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/16</span>
+                <span class='fraction'>16/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.33% </span>
+                <span class="strong">94.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/15</span>
+                <span class='fraction'>16/17</span>
             </div>
         
             
@@ -127,7 +127,14 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -135,6 +142,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -171,14 +179,20 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -199,6 +213,7 @@ import { z } from 'zod'
 import { JobsContext } from '../context/JobsContext'
 import { useContext, useState } from 'react'
 import { JobsContextType } from '../models/job'
+import JobFilter from './JobFilter'
 &nbsp;
 type JobFormInputs = z.infer&lt;typeof jobSchema&gt;;
 &nbsp;
@@ -234,17 +249,23 @@ export default function JobBoard() {
 &nbsp;
   const filteredJobs = selectedJobType ? <span class="branch-0 cbranch-no" title="branch not covered" >jobs.filter(<span class="fstat-no" title="function not covered" >(j</span>ob) =&gt; <span class="cstat-no" title="statement not covered" >job.type === selectedJobType)</span> </span>: jobs;
 &nbsp;
+  const jobTypes = [
+    { value: "", label: "All" },
+    { value: "Full-time", label: "Full-time" },
+    { value: "Part-time", label: "Part-time" },
+    { value: "Contract", label: "Contract" },
+    { value: "Internship", label: "Internship" },
+  ];
+&nbsp;
   return (
     &lt;&gt;
       &lt;div className="flex flex-col gap-4"&gt;
         &lt;h2 className="text-2xl font-bold mb-4"&gt;Available Jobs&lt;/h2&gt;
-        &lt;select value={selectedJobType || ""} onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setSelectedJobType(e.target.value)}</span> className="job-filter"&gt;
-          &lt;option value=""&gt;All&lt;/option&gt;
-          &lt;option value="Full-time"&gt;Full-time&lt;/option&gt;
-          &lt;option value="Part-time"&gt;Part-time&lt;/option&gt;
-          &lt;option value="Contract"&gt;Contract&lt;/option&gt;
-          &lt;option value="Internship"&gt;Internship&lt;/option&gt;
-        &lt;/select&gt;
+        &lt;JobFilter
+          value={selectedJobType}
+          onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setSelectedJobType(e.target.value)}</span>
+          options={jobTypes}
+        /&gt;
         {filteredJobs.map((job) =&gt; (
           &lt;JobCard key={job.id} job={job} /&gt;
         ))}
@@ -262,7 +283,7 @@ export default function JobBoard() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-16T19:45:53.652Z
+                at 2025-04-17T17:29:09.207Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -53,7 +53,7 @@ describe('JobBoard component', () => {
     const locationInput = getByLabelText('Location');
     const typeSelect = getByLabelText('Job Type');
     const descriptionInput = getByLabelText('Description');
-    const submitButton = getByText('Save Job');
+    const submitButton = getByText('Create Job');
 
     fireEvent.change(titleInput, { target: { value: 'Test Job' } });
     fireEvent.change(companyInput, { target: { value: 'Test Company' } });

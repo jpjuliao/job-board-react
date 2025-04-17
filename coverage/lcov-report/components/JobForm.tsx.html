@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.53% </span>
+                <span class="strong">58.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/13</span>
+                <span class='fraction'>7/12</span>
             </div>
         
             
@@ -150,9 +150,13 @@
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -174,6 +178,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -248,9 +254,10 @@ import { JobFormProps } from "../models/job";
  * @param {JobFormProps} props - The properties object.
  * @param {JobFormInputs} [props.defaultValues={}] - The default values for the form fields.
  * @param {(data: JobFormInputs) =&gt; void} props.onSubmit - The callback function to call when the form is submitted.
+ * @param {string} [props.mode="create"] - The mode of the form, either "create" or "edit".
  * @returns A React element representing the job form.
  */
-export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) {
+export default function JobForm({ defaultValues = {}, onSubmit, mode = "create" }: JobFormProps) {
   const {
     register,
     handleSubmit,
@@ -268,6 +275,7 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
           {...register("title")}
           className="border rounded px-3 py-2 w-full"
           id="job-title"
+          defaultValue={defaultValues.title}
         /&gt;
         {errors.title &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="text-red-500"&gt;{errors.title.message}&lt;/p&gt;}</span>
       &lt;/div&gt;
@@ -278,6 +286,7 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
           {...register("company")}
           className="border rounded px-3 py-2 w-full"
           id="company"
+          defaultValue={defaultValues.company}
         /&gt;
         {errors.company &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="text-red-500"&gt;{errors.company.message}&lt;/p&gt;}</span>
       &lt;/div&gt;
@@ -288,13 +297,14 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
           {...register("location")}
           className="border rounded px-3 py-2 w-full"
           id="location"
+          defaultValue={defaultValues.location}
         /&gt;
         {errors.location &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="text-red-500"&gt;{errors.location.message}&lt;/p&gt;}</span>
       &lt;/div&gt;
 &nbsp;
       &lt;div&gt;
         &lt;label htmlFor="job-type"&gt;Job Type&lt;/label&gt;
-        &lt;select {...register("type")} className="border rounded px-3 py-2 w-full" id="job-type"&gt;
+        &lt;select {...register("type")} className="border rounded px-3 py-2 w-full" id="job-type" defaultValue={defaultValues.type}&gt;
           &lt;option value=""&gt;Select type&lt;/option&gt;
           &lt;option value="Full-time"&gt;Full-time&lt;/option&gt;
           &lt;option value="Part-time"&gt;Part-time&lt;/option&gt;
@@ -310,8 +320,8 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
           {...register("description")}
           className="border rounded px-3 py-2 w-full min-h-[100px]"
           id="description"
+          defaultValue={defaultValues.description}
         /&gt;
-        {errors.description &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="text-red-500"&gt;{errors.description.message}&lt;/p&gt;}</span>
       &lt;/div&gt;
 &nbsp;
       &lt;button
@@ -319,19 +329,18 @@ export default function JobForm({ defaultValues = {}, onSubmit }: JobFormProps) 
         disabled={isSubmitting}
         className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
       &gt;
-        {isSubmitting ? "Saving..." : "Save Job"}
+        {mode === "create" ? "Create Job" : <span class="branch-1 cbranch-no" title="branch not covered" >"Update Job"}</span>
       &lt;/button&gt;
     &lt;/form&gt;
   );
-}
-&nbsp;</pre></td></tr></table></pre>
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-16T19:45:53.652Z
+                at 2025-04-17T17:29:09.207Z
             </div>
         <script src="../prettify.js"></script>
         <script>

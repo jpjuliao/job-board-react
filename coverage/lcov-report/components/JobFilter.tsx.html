@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for mocks/jobs.ts</title>
+    <title>Code coverage report for components/JobFilter.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">mocks</a> jobs.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> JobFilter.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -80,7 +80,17 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -95,26 +105,46 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const Jobs = [
-  {
-    id: 'job-001',
-    title: 'Frontend Developer',
-    company: 'TechCorp',
-    location: 'Remote',
-    type: 'Full-time',
-    description: 'Join our fast-paced team to build modern web experiences.',
-  },
-  {
-    id: 'job-002',
-    title: 'UI/UX Designer',
-    company: 'Creative Inc.',
-    location: 'New York, NY',
-    type: 'Contract',
-    description: 'Design user-first interfaces for our SaaS products.',
-  },
-]</pre></td></tr></table></pre>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">interface JobFilterProps {
+  value: string | null;
+  onChange: (e: React.ChangeEvent&lt;HTMLSelectElement&gt;) =&gt; void;
+  options: { value: string; label: string }[];
+}
+&nbsp;
+/**
+ * A select component for filtering jobs by type.
+ *
+ * @param {JobFilterProps} props The component props.
+ * @param {string | null} props.value The selected value, or `null` if no value is selected.
+ * @param {(e: React.ChangeEvent&lt;HTMLSelectElement&gt;) =&gt; void} props.onChange The callback function to call when the selected value changes.
+ * @param {{ value: string; label: string }[]} props.options The options for the select component.
+ * @returns {React.ReactElement} A React element representing the select component.
+ */
+const JobFilter: React.FC&lt;JobFilterProps&gt; = ({ value, onChange, options }) =&gt; {
+  return (
+    &lt;select value={value || ""} onChange={onChange} className="job-filter"&gt;
+      {options.map((option) =&gt; (
+        &lt;option key={option.value} value={option.value}&gt;
+          {option.label}
+        &lt;/option&gt;
+      ))}
+    &lt;/select&gt;
+  );
+};
+&nbsp;
+export default JobFilter;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
