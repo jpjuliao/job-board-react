@@ -1,6 +1,7 @@
 import { Job } from '../models/job'
 import { Dialog } from 'radix-ui'
 import JobCardDialog from './JobCardDialog'
+import JobDetail from './JobDetail'
 
 /**
  * Component to display job details in a card format.
@@ -15,11 +16,7 @@ export default function JobCard({ job }: { job: Job }) {
       <Dialog.Root>
         <Dialog.Trigger asChild>
           <div className="job-card bg-white p-4 rounded shadow">
-            <h2 className="text-gray-800 text-lg font-semibold">{job.title}</h2>
-            <p className="text-gray-600">{job.company}</p>
-            <p className="text-gray-600">{job.location}</p>
-            <p className="text-gray-600">{job.type}</p>
-            <p className="text-gray-600">{job.description}</p>
+            <JobDetail job={job} />
           </div>
         </Dialog.Trigger>
         <JobCardDialog job={job} />

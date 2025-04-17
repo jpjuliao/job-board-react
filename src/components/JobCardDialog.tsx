@@ -4,6 +4,7 @@ import { useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { JobsContext } from '../context/JobsContext'
 import { JobsContextType } from '../models/job'
+import JobDetail from './JobDetail'
 
 export default function JobCardDialog({ job }: { job: Job }) {
   const [isEditing, setIsEditing] = useState(false)
@@ -63,16 +64,7 @@ export default function JobCardDialog({ job }: { job: Job }) {
             </button>
           </form>
         ) : (
-          <>
-            <h2 className="text-gray-800 text-lg font-semibold">{job.title}</h2>
-            <p className="text-gray-600">{job.company}</p>
-            <p className="text-gray-600">{job.location}</p>
-            <p className="text-gray-600">{job.type}</p>
-            <p className="text-gray-600">{job.description}</p>
-            <button type="button" onClick={() => setIsEditing(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Edit Job
-            </button>
-          </>
+          <JobDetail job={job} />
         )}
       </Dialog.Content>
     </Dialog.Portal>
