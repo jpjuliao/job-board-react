@@ -1,40 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
+  onError: (error: Error) => void;
 }
 
-interface ErrorBoundaryState {
-  hasError: boolean;
-  error: Error | null;
-}
+const ErrorBoundary: React.FC<ErrorBoundaryProps> = ({ children }) => {
+  const [hasError, setError] = useState(false);
+  const [error, setErrorObject] = useState<Error | null>(null);
 
-class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  constructor(props: ErrorBoundaryProps) {
-    super(props);
-    this.state = { hasError: false, error: null };
-  }
-
-  static getDerivedStateFromError(error: Error) {
-    return { hasError: true, error };
-  }
-
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Error caught by error boundary:', error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div>
-          <h2>Something went wrong.</h2>
-          <p>{this.state.error?.message}</p>
-        </div>
-      );
+  useEffect(() => {
+    if (error) {
+      console.error('Error caught by error boundary:', error);
     }
+  }, [error]);
 
-    return this.props.children;
+  const errorHandler = (error: Error) => {
+    setError(true);
+    setErrorObject(error);
+  };
+
+  if (hasError) {
+    return (
+      <div>
+        <h2>Something went wrong.</h2>
+        <p>{error?.message}</p>
+      </div>
+    );
   }
-}
+
+  return (
+    <ErrorBoundary onError={errorHandler}>
+      {children}
+    </ErrorBoundary>
+  );
+};
 
 export default ErrorBoundary;
