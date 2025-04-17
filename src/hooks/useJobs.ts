@@ -21,7 +21,13 @@ const useJobs = () => {
 
   const filteredJobs = selectedJobType ? jobs.filter((job) => job.type === selectedJobType) : jobs;
 
-  const handleJobSubmit = (data: Job) => {
+  const handleJobSubmit = (data: {
+    title: string;
+    company: string;
+    location: string;
+    type: "Full-time" | "Part-time" | "Contract" | "Internship";
+    description: string;
+  }) => {
     console.log("Submitted job:", data);
 
     const newJob: Job = {

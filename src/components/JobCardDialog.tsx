@@ -5,6 +5,7 @@ import { JobsContext } from '../context/JobsContext'
 import { JobsContextType } from '../models/job'
 import JobDetail from './JobDetail'
 import JobForm from './JobForm'
+import { JobType } from '../enums/jobTypes'
 
 /**
  * A dialog component that displays a job's details and allows for editing.
@@ -51,7 +52,7 @@ export default function JobCardDialog({ job }: { job: Job }) {
               title: job.title,
               company: job.company,
               location: job.location,
-              type: job.type as "Full-time" | "Part-time" | "Contract" | "Internship",
+              type: job.type as JobType,
               description: job.description,
             }}
             onSubmit={onSubmit}
