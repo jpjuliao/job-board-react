@@ -30,6 +30,7 @@ export default function JobBoard() {
       {filteredJobs.map((job) => (
         <JobCard key={job.id} job={job} />
       ))}
+      <h2 className="text-2xl font-bold mt-4">Post a Job</h2>
       <JobForm onSubmit={handleJobSubmit} />
     </div>
   );
