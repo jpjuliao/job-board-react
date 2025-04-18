@@ -8,4 +8,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  build: {
+    outDir: 'docs',
+    assetsDir: 'https://jpjuliao.github.io/job-board-react/',
+  },
 })
