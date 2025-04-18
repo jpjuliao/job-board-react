@@ -14,6 +14,7 @@ function App() {
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
       </Helmet>
       <header className="App-header">
+        <h1>Job Board</h1>
       </header>
       <main>
         <JobBoard />
