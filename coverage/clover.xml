@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1744933088097" clover="3.2.0">
-  <project timestamp="1744933088098" name="All files">
-    <metrics statements="66" coveredstatements="59" conditionals="20" coveredconditionals="11" methods="16" coveredmethods="11" elements="102" coveredelements="81" complexity="0" loc="66" ncloc="66" packages="5" files="10" classes="10"/>
+<coverage generated="1744948809102" clover="3.2.0">
+  <project timestamp="1744948809102" name="All files">
+    <metrics statements="74" coveredstatements="67" conditionals="22" coveredconditionals="13" methods="17" coveredmethods="12" elements="113" coveredelements="92" complexity="0" loc="74" ncloc="74" packages="6" files="11" classes="11"/>
     <package name="components">
       <metrics statements="44" coveredstatements="37" conditionals="18" coveredconditionals="10" methods="12" coveredmethods="8"/>
       <file name="JobBoard.tsx" path="/Users/jpjuliao/Codes/job-board-react/src/components/JobBoard.tsx">
-        <metrics statements="10" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -13,9 +13,8 @@
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="6" type="stmt"/>
         <line num="14" count="6" type="stmt"/>
-        <line num="22" count="6" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="31" count="13" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="13" type="stmt"/>
       </file>
       <file name="JobCard.tsx" path="/Users/jpjuliao/Codes/job-board-react/src/components/JobCard.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -36,13 +35,13 @@
         <line num="28" count="13" type="stmt"/>
         <line num="29" count="13" type="stmt"/>
         <line num="31" count="13" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="45" count="13" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="13" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
       </file>
       <file name="JobDetail.tsx" path="/Users/jpjuliao/Codes/job-board-react/src/components/JobDetail.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -58,13 +57,14 @@
         <line num="28" count="1" type="stmt"/>
       </file>
       <file name="JobForm.tsx" path="/Users/jpjuliao/Codes/job-board-react/src/components/JobForm.tsx">
-        <metrics statements="6" coveredstatements="6" conditionals="12" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <metrics statements="7" coveredstatements="7" conditionals="12" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="15" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="20" count="7" type="stmt"/>
-        <line num="25" count="7" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="16" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="26" count="7" type="stmt"/>
       </file>
     </package>
     <package name="context">
@@ -80,22 +80,35 @@
         <line num="31" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="enums">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="jobTypes.ts" path="/Users/jpjuliao/Codes/job-board-react/src/enums/jobTypes.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="hooks">
-      <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+      <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
       <file name="useJobs.ts" path="/Users/jpjuliao/Codes/job-board-react/src/hooks/useJobs.ts">
-        <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="19" count="6" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
         <line num="20" count="6" type="stmt"/>
-        <line num="22" count="6" type="cond" truecount="1" falsecount="1"/>
-        <line num="24" count="6" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="45" count="6" type="stmt"/>
-        <line num="54" count="1" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="23" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="33" count="6" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="48" count="6" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
       </file>
     </package>
     <package name="mocks">
@@ -106,11 +119,12 @@
       </file>
     </package>
     <package name="schemas">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="jobSchema.ts" path="/Users/jpjuliao/Codes/job-board-react/src/schemas/jobSchema.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
       </file>
     </package>
   </project>

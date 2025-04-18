@@ -9,15 +9,7 @@ import useJobs from '../hooks/useJobs'
  * @returns A React element for the job board.
  */
 export default function JobBoard() {
-  const { filteredJobs, selectedJobType, setSelectedJobType, handleJobSubmit } = useJobs();
-
-  const jobTypes = [
-    { value: "", label: "All" },
-    { value: "Full-time", label: "Full-time" },
-    { value: "Part-time", label: "Part-time" },
-    { value: "Contract", label: "Contract" },
-    { value: "Internship", label: "Internship" },
-  ];
+  const { filteredJobs, selectedJobType, setSelectedJobType, handleJobSubmit, jobTypes } = useJobs();
 
   return (
     <div className="flex flex-col gap-4">

@@ -19,7 +19,7 @@ const JobsContext = createContext<JobsContextType | null>(null);
  * @returns {React.ReactNode} The rendered component.
  */
 const JobsProvider: React.FC<JobProviderProps> = ({ children }) => {
-  const [jobs, setJobs] = useState<Job[]>(Jobs);
+  const [jobs, setJobs] = useState<Job[]>(Jobs as Job[]);
   
   return (
     <JobsContext.Provider value={{ jobs, setJobs }}>

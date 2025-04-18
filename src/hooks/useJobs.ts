@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { JobsContext } from '../context/JobsContext';
 import { JobsContextType } from '../models/job';
 import { Job } from '../models/job';
+import { JobType } from '../enums/jobTypes';
 
 /**
  * Hook that provides the current list of jobs and a function to update the list.
@@ -21,13 +22,15 @@ const useJobs = () => {
 
   const filteredJobs = selectedJobType ? jobs.filter((job) => job.type === selectedJobType) : jobs;
 
-  const handleJobSubmit = (data: {
-    title: string;
-    company: string;
-    location: string;
-    type: "Full-time" | "Part-time" | "Contract" | "Internship";
-    description: string;
-  }) => {
+  const jobTypes = [
+    { value: "", label: "All" },
+    { value: JobType.FULL_TIME, label: JobType.FULL_TIME },
+    { value: JobType.PART_TIME, label: JobType.PART_TIME },
+    { value: JobType.CONTRACT, label: JobType.CONTRACT },
+    { value: JobType.INTERNSHIP, label: JobType.INTERNSHIP },
+  ];
+
+  const handleJobSubmit = (data: Job) => {
     console.log("Submitted job:", data);
 
     const newJob: Job = {
@@ -48,6 +51,7 @@ const useJobs = () => {
     selectedJobType,
     setSelectedJobType,
     handleJobSubmit,
+    jobTypes
   };
 };
 

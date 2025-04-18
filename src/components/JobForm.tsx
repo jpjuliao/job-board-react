@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { jobSchema, JobFormInputs } from "../schemas/jobSchema";
 import { JobFormProps } from "../models/job";
+import { JobType } from "../enums/jobTypes";
 
 /**
  * Form component for creating or updating a job.
@@ -61,10 +62,10 @@ export default function JobForm({ defaultValues = {}, onSubmit, mode = "create" 
         <label htmlFor="job-type">Job Type</label>
         <select {...register("type")} className="border rounded px-3 py-2 w-full" id="job-type" defaultValue={defaultValues.type}>
           <option value="">Select type</option>
-          <option value="Full-time">Full-time</option>
-          <option value="Part-time">Part-time</option>
-          <option value="Contract">Contract</option>
-          <option value="Internship">Internship</option>
+          <option value={JobType.FULL_TIME}>{JobType.FULL_TIME}</option>
+          <option value={JobType.PART_TIME}>{JobType.PART_TIME}</option>
+          <option value={JobType.CONTRACT}>{JobType.CONTRACT}</option>
+          <option value={JobType.INTERNSHIP}>{JobType.INTERNSHIP}</option>
         </select>
         {errors.type && <p className="text-red-500">{errors.type.message}</p>}
       </div>

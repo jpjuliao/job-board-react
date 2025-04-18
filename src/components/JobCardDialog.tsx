@@ -28,13 +28,7 @@ export default function JobCardDialog({ job }: { job: Job }) {
   const [isEditing, setIsEditing] = useState(false)
   const { jobs, setJobs } = useContext(JobsContext) as JobsContextType
 
-  const onSubmit = (data: {
-    title: string;
-    company: string;
-    location: string;
-    type: "Full-time" | "Part-time" | "Contract" | "Internship";
-    description: string;
-  }) => {
+  const onSubmit = (data: Job) => {
     const updatedJob: Job = { ...job, ...data };
     console.log('Updated job:', updatedJob);
     const updatedJobs = jobs.map((j) => (j.id === job.id ? updatedJob : j));
