@@ -10,6 +10,6 @@ export default defineConfig({
   ],
   build: {
     outDir: 'docs',
-    assetsDir: 'https://jpjuliao.github.io/job-board-react/',
   },
+  base: '/job-board-react/',
 })
