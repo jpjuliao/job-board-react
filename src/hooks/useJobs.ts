@@ -31,7 +31,6 @@ const useJobs = () => {
   ];
 
   const handleJobSubmit = (data: Job) => {
-    console.log("Submitted job:", data);
 
     const newJob: Job = {
       id: Math.random().toString(36).slice(2, 9),

@@ -30,7 +30,6 @@ export default function JobCardDialog({ job }: { job: Job }) {
 
   const onSubmit = (data: Job) => {
     const updatedJob: Job = { ...job, ...data };
-    console.log('Updated job:', updatedJob);
     const updatedJobs = jobs.map((j) => (j.id === job.id ? updatedJob : j));
     setJobs(updatedJobs);
     setIsEditing(false);

@@ -10,10 +10,6 @@ interface JobDetailProps {
  * The component receives a single prop, `job`, which is an object that
  * contains the details of the job to be displayed. The component displays
  * the job's title, company, location, type, and description.
- *
- * @param {JobDetailProps} props - The component props.
- * @param {Job} props.job - The job details to display.
- * @returns {React.ReactElement} A React element representing the job details.
  */
 const JobDetail: React.FC<JobDetailProps> = ({ job }) => {
   return (

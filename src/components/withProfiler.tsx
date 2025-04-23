@@ -4,6 +4,9 @@ const withProfiler = (
   WrappedComponent: React.ComponentType<React.PropsWithChildren<unknown>>
 ) => {
 
+  /**
+   * Wraps a component in a Profiler that logs the time it takes to render.
+   */
   const ProfilerComponent: React.FC<React.PropsWithChildren<unknown>> = ({ children, ...props }) => {
     const [renderTime, setRenderTime] = useState(0);
 
