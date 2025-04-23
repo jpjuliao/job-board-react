@@ -1,7 +1,6 @@
 import './App.css'
 import JobBoard from './components/JobBoard'
 import { JobsProvider } from './context/JobsContext'
-import { Helmet } from 'react-helmet'
 import withProfiler from './components/withProfiler'
 
 function App() {
@@ -10,12 +9,6 @@ function App() {
 
   return (
     <JobsProvider>
-      <Helmet>
-        <title>Job Board Application</title>
-        <meta name="description" content="Job Board" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-      </Helmet>
       <header className="App-header">
         <h1>Job Board</h1>
       </header>
