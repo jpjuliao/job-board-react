@@ -20,7 +20,7 @@ The application is built using a modular approach, with separate components for 
 * `JobFilter`: Displays a job type select to filter results
 * `JobForm`: Handles job submission and validation
 * `ErrorBoundary`: Serves as an error boundary to catch JavaScript errors anywhere in the child component tree
-* `withProfiler`: Wraps a component in a Profiler that logs the time it takes to render
+* `ProfilerWrapper`: Wraps a component in a Profiler that logs the time it takes to render
 
 The application uses React Hooks for state management and Tailwind CSS for styling.
 

@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-const withProfiler = (
+/**
+ * A higher-order component that wraps a given component with a React Profiler.
+ * 
+ * This wrapper component logs the time taken to render the wrapped component
+ * to the console, providing performance insights during development.
+ */
+
+const ProfilerWrapper = (
   WrappedComponent: React.ComponentType<React.PropsWithChildren<unknown>>
 ) => {
 
@@ -34,4 +41,4 @@ const withProfiler = (
   return ProfilerComponent;
 };
 
-export default withProfiler;
+export default ProfilerWrapper;

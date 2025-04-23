@@ -1,11 +1,11 @@
 import './App.css'
 import JobBoard from './components/JobBoard'
 import { JobsProvider } from './context/JobsContext'
-import withProfiler from './components/withProfiler'
+import ProfilerWrapper from './components/ProfilerWrapper'
 
 function App() {
 
-  const ProfilerJobBoard = withProfiler(JobBoard);
+  const ProfilerJobBoard = ProfilerWrapper(JobBoard);
 
   return (
     <JobsProvider>

@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import ErrorBoundary from './components/ErrorBoundary.tsx'
-import withProfiler from './components/withProfiler'
+import ProfilerWrapper from './components/ProfilerWrapper.tsx'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 
-const ProfilerApp = withProfiler(App);
+const ProfilerApp = ProfilerWrapper(App);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
