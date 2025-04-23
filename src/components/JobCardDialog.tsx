@@ -40,6 +40,17 @@ export default function JobCardDialog({ job }: { job: Job }) {
     <Dialog.Portal>
       <Dialog.Overlay className="DialogOverlay fixed inset-0 bg-black/50" />
       <Dialog.Content className="DialogContent fixed top-[50%] left-[50%] max-h-full w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded bg-white p-6 shadow text-gray-600">
+        <Dialog.Close className="DialogClose absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </Dialog.Close>
+        <Dialog.Title className="DialogTitle text-lg font-bold">
+          {isEditing ? 'Edit Job' : 'Job Details'}
+        </Dialog.Title>
+        <Dialog.Description className="DialogDescription mt-2 mb-4 text-sm text-gray-500">
+          {isEditing ? 'Edit the job details below.' : 'View and edit the job details.'}
+        </Dialog.Description>
         {isEditing ? (
           <JobForm
             defaultValues={{

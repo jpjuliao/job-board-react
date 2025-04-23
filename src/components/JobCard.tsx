@@ -15,7 +15,15 @@ export default function JobCard({ job }: { job: Job }) {
     <>
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <div className="job-card bg-white p-4 rounded shadow">
+          <div className="job-card bg-white p-4 rounded shadow"
+            tabIndex={0}
+            role="button"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                e.currentTarget.click();
+              }
+            }}>
             <JobDetail job={job} />
           </div>
         </Dialog.Trigger>
