@@ -4,7 +4,7 @@ A React-based job board application built with TypeScript, Vite, Tailwind CSS, R
 
 ## Setup Instructions
 
-1. Clone the repository: `git clone [https://github.com/your-username/job-board.git`](<https://github.com/your-username/job-board.git>)
+1. Clone the repository: `git clone [https://github.com/jpjuliao/job-board.git`](<https://github.com/jpjuliao/job-board.git>)
 2. Install dependencies: `npm install` or `yarn install`
 3. Start the development server: `npm run dev` or `yarn dev`
 4. Open the application in your browser
