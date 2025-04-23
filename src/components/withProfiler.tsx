@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const withProfiler = (WrappedComponent: React.ComponentType<React.PropsWithChildren<unknown>>) => {
+const withProfiler = (
+  WrappedComponent: React.ComponentType<React.PropsWithChildren<unknown>>
+) => {
 
   const ProfilerComponent: React.FC<React.PropsWithChildren<unknown>> = ({ children, ...props }) => {
     const [renderTime, setRenderTime] = useState(0);
