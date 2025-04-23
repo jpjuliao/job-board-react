@@ -4,7 +4,7 @@ A React-based job board application built with TypeScript, Vite, Tailwind CSS, R
 
 ## Setup Instructions
 
-1. Clone the repository: `git clone [https://github.com/your-username/job-board.git`](https://github.com/your-username/job-board.git`)
+1. Clone the repository: `git clone [https://github.com/your-username/job-board.git`](<https://github.com/your-username/job-board.git>)
 2. Install dependencies: `npm install` or `yarn install`
 3. Start the development server: `npm run dev` or `yarn dev`
 4. Open the application in your browser
@@ -36,17 +36,17 @@ The application uses React Hooks for state management and Tailwind CSS for styli
 
 The following technologies and tools were used to build this application:
 
-- Frontend:
-  - React: A JavaScript library for building user interfaces
-  - TypeScript: A superset of JavaScript that adds optional static typing
-  - Vite: A fast and lightweight development server
-  - Tailwind CSS: A utility-first CSS framework
-  - Radix UI: A UI component library
-  - Helmet: A head meta data manager
-  - Zod: TypeScript-first schema declaration and validation library with static type inference
-- Testing:
-  - Jest: A JavaScript testing framework
-  - React Testing Library: A testing library for React components
+* Frontend:
+  * React: A JavaScript library for building user interfaces
+  * TypeScript: A superset of JavaScript that adds optional static typing
+  * Vite: A fast and lightweight development server
+  * Tailwind CSS: A utility-first CSS framework
+  * Radix UI: A UI component library
+  * Helmet: A head meta data manager
+  * Zod: TypeScript-first schema declaration and validation library with static type inference
+* Testing:
+  * Jest: A JavaScript testing framework
+  * React Testing Library: A testing library for React components
 
 ## Contributing
 
